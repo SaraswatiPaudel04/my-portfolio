@@ -156,62 +156,39 @@
         <h2>Projects</h2>
     </div>
 
-    <div class="projects-container">
+<div class="projects-container">
+
+    {% for project in projects %}
 
         <div class="project-card">
 
-            <h3>Personal Portfolio</h3>
+            <h3>{{ project.title }}</h3>
 
             <p>
-                A personal portfolio website built using
-                Python and Django.
+                {{ project.description }}
             </p>
 
             <div class="project-tech">
-                Python · Django · HTML · CSS
+                {{ project.technologies }}
             </div>
 
-            <a href="#">View Project →</a>
+            {% if project.github_link %}
+                <a href="{{ project.github_link }}" target="_blank">
+                    GitHub →
+                </a>
+            {% endif %}
+
+            {% if project.live_link %}
+                <a href="{{ project.live_link }}" target="_blank">
+                    Live Demo →
+                </a>
+            {% endif %}
 
         </div>
 
+    {% endfor %}
 
-        <div class="project-card">
-
-            <h3>Expense Tracker</h3>
-
-            <p>
-                A Python application for managing
-                personal expenses.
-            </p>
-
-            <div class="project-tech">
-                Python · SQLite
-            </div>
-
-            <a href="#">View Project →</a>
-
-        </div>
-
-
-        <div class="project-card">
-
-            <h3>Blood Donor System</h3>
-
-            <p>
-                A system for connecting blood donors
-                with people who need blood.
-            </p>
-
-            <div class="project-tech">
-                Python · Django · Database
-            </div>
-
-            <a href="#">View Project →</a>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -252,15 +229,15 @@
 
     <div class="contact-links">
 
-        <a href="mailto:your@email.com">
+        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
             Email
         </a>
 
-        <a href="https://github.com/yourusername">
+        <a href="https://github.com/SaraswatiPaudel04">
             GitHub
         </a>
 
-        <a href="https://linkedin.com/in/yourusername">
+        <a href="www.linkedin.com/in/saraswati-paudel-591b7636b">
             LinkedIn
         </a>
 
